@@ -17,7 +17,7 @@ const LoanShark = ({ sharkIndex, close, setSharkIndex }: any) => {
 
   const { user, setUser } = useContext(UserContext) as UserContextType;
 
-  const aniRef = useRef();
+  const aniRef: any = useRef();
 
   const handleChangeAmount = (e: any) => {
     setAmount(e.target.value);
@@ -111,7 +111,7 @@ const LoanShark = ({ sharkIndex, close, setSharkIndex }: any) => {
   };
 
   useEffect(() => {
-    // aniRef.current?.load();
+    aniRef.current?.load();
     setAmount(loanSharks[sharkIndex].amount);
     const index = user.loans.findIndex((loan) => loan.id === sharkIndex + 1);
     if (index !== -1) {
@@ -123,12 +123,12 @@ const LoanShark = ({ sharkIndex, close, setSharkIndex }: any) => {
 
   useEffect(() => {
     if (!!aniRef.current) {
-      //   aniRef.current?.addEventListener("play", handleVideo);
+      aniRef.current?.addEventListener("play", handleVideo);
     }
   }, [aniRef]);
 
   const handleVideo = () => {
-    // aniRef.current.muted = false;
+    aniRef.current.muted = false;
   };
 
   return (
@@ -169,7 +169,7 @@ const LoanShark = ({ sharkIndex, close, setSharkIndex }: any) => {
         <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
           <video
             className="w-[400px] h-[250px]"
-            // ref={aniRef}
+            ref={aniRef}
             autoPlay
             loop
             muted

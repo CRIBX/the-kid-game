@@ -73,7 +73,7 @@ const Game = () => {
   const [openLoanDebt, setOpenLoanDebt] = useState(false);
   const [showDemo, setShowDemo] = useState(false);
 
-  const videoRef = useRef();
+  const videoRef: any = useRef();
   const navigate = useNavigate();
 
   const location = useLocation();
@@ -274,13 +274,13 @@ const Game = () => {
   };
 
   useEffect(() => {
-    // if (!!videoRef.current) {
-    //   videoRef.current.addEventListener("play", handleVideo);
-    // }
+    if (!!videoRef.current) {
+      videoRef.current.addEventListener("play", handleVideo);
+    }
   }, [videoRef]);
 
   const handleVideo = useCallback(() => {
-    // videoRef.current.muted = false;
+    videoRef.current.muted = false;
     setTimeout(() => {
       if (showDemo) {
         navigate("/game");
@@ -309,7 +309,7 @@ const Game = () => {
           className="fixed h-screen w-screen top-0 left-0 z-20 bg-black"
         >
           <video
-            // ref={videoRef}
+            ref={videoRef}
             onLoadedData={handleVideo}
             autoPlay
             muted
