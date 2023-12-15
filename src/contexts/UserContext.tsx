@@ -14,9 +14,9 @@ export interface ItemType {}
 
 export interface JunkType {
   amount?: number;
-  price: number;
-  id: number;
-  name: string;
+  price?: number;
+  id?: number;
+  name?: string;
 }
 
 export interface BagType {

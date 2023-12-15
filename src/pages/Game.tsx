@@ -183,14 +183,14 @@ const Game = () => {
     if (junks) {
       for (let i = 0; i < junks.length; i++) {
         const newPrice = randomPrice(junks[i].price);
-        discountedAmount1 = junks[i].price - newPrice;
+        discountedAmount1 = (junks[i].price || 0) - newPrice;
         tempBuffer.push({
           id: junks[i].id,
           name: junks[i].name,
           price: newPrice,
         });
         if (discountedAmount1 > discountedAmount2) {
-          setCheapestJunk(junks[i].name);
+          setCheapestJunk(junks[i].name || "");
           discountedAmount2 = discountedAmount1;
         }
       }

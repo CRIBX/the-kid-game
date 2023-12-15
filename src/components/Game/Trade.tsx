@@ -41,7 +41,7 @@ const Trade = ({ junkToTrade, close, isIncrease }: any) => {
       user.bag.total - user.bag.fill,
       Math.floor(user.cash / junkToTrade.price)
     ),
-    user.junks[junkToTrade.id].amount
+    user.junks[junkToTrade.id].amount || 0
   );
   const [amount, setAmount] = useState(maxAmount);
 
@@ -191,9 +191,7 @@ const Trade = ({ junkToTrade, close, isIncrease }: any) => {
               color="#dc3545"
               hoverColor="#ec4555"
               className="border-2 border-[#cc2535]"
-              disabled={
-                user.junks[junkToTrade.id].amount < amount || amount == 0
-              }
+              disabled={(user.junks[junkToTrade.id]?.amount || 0) < amount}
             >
               <div className="text-[20px]">+</div>
               <div className="text-[14px]">SELL</div>
