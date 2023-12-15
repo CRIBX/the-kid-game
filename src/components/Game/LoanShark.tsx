@@ -152,7 +152,7 @@ const LoanShark = ({ sharkIndex, close, setSharkIndex }: any) => {
       )}
 
       <div className="flex flex-col items-center">
-        <div className="absolute top-[20px] flex flex-col items-center">
+        <div className="absolute top-[100px] flex flex-col items-center">
           <div className="bg-[#a22] border-1 border-[#000] px-[20px] text-[#fff] mb-[10px] text-[28px]">
             {loanSharks[sharkIndex].name}
           </div>
@@ -249,7 +249,7 @@ const LoanShark = ({ sharkIndex, close, setSharkIndex }: any) => {
         </div>
         <button
           onClick={close}
-          className="text-[#fff] text-[48px] absolute top-[30px] right-[50px]"
+          className="text-[#fff] text-[48px] absolute top-[100px] right-[50px]"
         >
           X
         </button>

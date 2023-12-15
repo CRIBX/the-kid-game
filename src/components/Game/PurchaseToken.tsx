@@ -121,7 +121,7 @@ const PurchaseToken = () => {
           <div className="relative text-center flex flex-col h-full justify-center items-center">
             <button
               onClick={closeBuyModal}
-              className="absolute right-[15px] top-[10px] text-[#fff]"
+              className="absolute right-[25px] top-[100px] text-[#fff]"
             >
               X
             </button>
